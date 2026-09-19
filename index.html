@@ -695,7 +695,39 @@ footer p{
  .orbit-label.one{right:0}.orbit-label.four{left:0}
 }
 
+
+/* WORLD-CLASS LANDING LAYER */
+.hero:before{pointer-events:none;animation:drift 16s ease-in-out infinite alternate}
+@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(-35px,25px) scale(1.08)}}
+.hero-scroll{margin-top:28px;color:#8eabb7;font-size:11px;letter-spacing:2px;font-weight:800;text-transform:uppercase;display:flex;align-items:center;gap:12px}
+.hero-scroll:after{content:"";width:42px;height:1px;background:rgba(255,255,255,.25)}
+.section-rule{height:1px;background:linear-gradient(90deg,transparent,#b9d8dc,transparent);margin:0 auto;width:70%}
+.mission{background:#fff}
+.mission-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.mission-quote{font-size:clamp(30px,4vw,52px);line-height:1.08;font-weight:900;color:var(--navy);letter-spacing:-2px}
+.mission-quote span{color:var(--blue)}
+.mission-copy p{color:var(--muted);font-size:17px;margin-bottom:18px}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+.pillar{padding:18px;border-radius:18px;background:#f3f9f9;border:1px solid #e1edef;font-weight:800;color:var(--navy);font-size:13px}
+.partner-strip{background:#071b2d;color:white;padding:28px 0}
+.partner-inner{display:flex;justify-content:space-between;align-items:center;gap:20px}
+.partner-inner span{color:#a9c3cc;font-size:13px}
+.partner-inner strong{font-size:15px}
+.trust-line{display:flex;justify-content:center;gap:30px;flex-wrap:wrap;margin-top:35px;color:#6b818b;font-size:12px;font-weight:800;letter-spacing:.4px}
+@media(max-width:800px){.mission-grid{grid-template-columns:1fr;gap:35px}.pillars{grid-template-columns:1fr 1fr}.partner-inner{flex-direction:column;text-align:center}}
+@media(max-width:600px){.pillars{grid-template-columns:1fr}.trust-line{gap:14px}}
 </style>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"TouristAttraction",
+  "name":"SAFARI MINDS VILLAGE – TUNISIA",
+  "description":"A new-generation educational adventure destination for children and teenagers aged 6–15, combining intelligence, nature, technology, sport, culture and challenge.",
+  "url":"https://clubplan3r-ai.github.io/safari-minds-village/",
+  "brand":{"@type":"Brand","name":"SAFARI MINDS VILLAGE – TUNISIA"}
+}
+</script>
 </head>
 
 <body id="top">
@@ -756,6 +788,7 @@ footer p{
         <span><strong>7</strong> days of discovery</span>
         <span><strong>1</strong> Tunisian vision, open to the world</span>
       </div>
+      <div class="hero-scroll">Scroll to discover the experience</div>
 
     </div>
 
@@ -846,6 +879,32 @@ footer p{
 
 </section>
 
+<!-- MISSION -->
+<section class="mission">
+  <div class="container">
+    <div class="mission-grid">
+      <div class="mission-quote">
+        We don't simply <span>entertain</span> children.<br>
+        We create experiences that help them <span>discover what they can become.</span>
+      </div>
+      <div class="mission-copy">
+        <div class="kicker">Our Difference</div>
+        <p>SAFARI MINDS VILLAGE – TUNISIA brings together learning, adventure and discovery in one coherent experience.</p>
+        <p>Children learn by doing, think through challenges, explore their environment and build confidence through teamwork and achievement.</p>
+        <div class="pillars">
+          <div class="pillar">INTELLIGENCE</div>
+          <div class="pillar">EXPLORATION</div>
+          <div class="pillar">INNOVATION</div>
+          <div class="pillar">MOVEMENT</div>
+          <div class="pillar">CULTURE</div>
+          <div class="pillar">LEADERSHIP</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-rule"></div>
 
 <!-- SEVEN WORLDS -->
 
@@ -1135,6 +1194,14 @@ footer p{
 
   </div>
 
+</section>
+
+<!-- PARTNERS -->
+<section class="partner-strip">
+  <div class="container partner-inner">
+    <strong>A Tunisian vision • Open to international collaboration</strong>
+    <span>For families • schools • trainers • institutions • partners</span>
+  </div>
 </section>
 
 
