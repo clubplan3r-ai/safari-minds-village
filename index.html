@@ -4,14 +4,19 @@ DOCTYPE html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SAFARI MINDS VILLAGE – TUNISIA | Smart Educational Tourism</title>
+<title>SAFARI MINDS VILLAGE – TUNISIA | Learn • Explore • Challenge • Lead</title>
 
-<meta name="description" content="SAFARI MINDS VILLAGE – TUNISIA. A smart educational tourism destination combining mental arithmetic, soroban, intelligence games, nature, technology, sports, culture and international championships.">
+<meta name="description" content="SAFARI MINDS VILLAGE – TUNISIA is a new-generation educational adventure destination for children and teenagers aged 6–15, combining intelligence, nature, technology, sport, culture and challenge.">
 
 <meta name="keywords" content="Safari Minds Village, Tunisia, educational tourism, children, mental arithmetic, soroban, smart camp, Future Lab, championships">
 
 <meta name="author" content="SAFARI MINDS VILLAGE – TUNISIA">
 <meta name="theme-color" content="#071b2d">
+<meta property="og:title" content="SAFARI MINDS VILLAGE – TUNISIA">
+<meta property="og:description" content="Learn • Explore • Challenge • Lead — a new-generation educational adventure destination in Tunisia.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/safari-minds-village-logo.webp">
+<meta name="twitter:card" content="summary_large_image">
 
 <style>
 :root{
@@ -612,6 +617,84 @@ footer p{
     grid-template-columns:1fr;
   }
 }
+
+/* PREMIUM HERO UPGRADE */
+.hero{
+  min-height:100svh;
+  padding:120px 0 70px;
+  background:
+    radial-gradient(circle at 72% 28%,rgba(82,214,217,.22),transparent 22%),
+    radial-gradient(circle at 22% 72%,rgba(101,185,110,.18),transparent 26%),
+    linear-gradient(135deg,#041522 0%,#082c42 52%,#07535a 100%);
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);
+  gap:55px;
+  align-items:center;
+}
+.hero-content{max-width:760px;}
+.hero-kicker{
+  color:#bfeef0;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:2.5px;
+  text-transform:uppercase;
+  margin-bottom:18px;
+}
+.hero h1{font-size:clamp(50px,7vw,88px);letter-spacing:-4px;margin-bottom:12px;}
+.hero h2{font-size:clamp(22px,3vw,32px);margin-bottom:22px;}
+.hero p{font-size:19px;line-height:1.7;}
+.hero-badges{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 28px;}
+.hero-badge{
+  padding:8px 13px;border:1px solid rgba(255,255,255,.14);
+  border-radius:30px;background:rgba(255,255,255,.06);
+  color:#dceff2;font-size:12px;font-weight:800;
+}
+.hero-visual{
+  min-height:510px;display:flex;align-items:center;justify-content:center;
+  position:relative;
+}
+.hero-orbit{
+  width:min(470px,82vw);aspect-ratio:1;border-radius:50%;
+  border:1px solid rgba(255,255,255,.13);
+  position:relative;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 0 90px rgba(82,214,217,.10),inset 0 0 80px rgba(82,214,217,.05);
+}
+.hero-orbit:before,.hero-orbit:after{
+  content:"";position:absolute;border-radius:50%;border:1px solid rgba(82,214,217,.13);
+}
+.hero-orbit:before{inset:9%;}.hero-orbit:after{inset:20%;border-color:rgba(101,185,110,.15);}
+.hero-orbit .hero-logo{width:min(315px,62vw);margin:0;z-index:2;}
+.orbit-label{
+  position:absolute;padding:10px 14px;border-radius:16px;
+  background:rgba(4,18,30,.82);border:1px solid rgba(255,255,255,.12);
+  color:white;font-size:11px;font-weight:900;letter-spacing:1px;
+  box-shadow:0 12px 30px rgba(0,0,0,.22);
+}
+.orbit-label.one{top:9%;right:0}.orbit-label.two{bottom:15%;right:-2%}
+.orbit-label.three{bottom:4%;left:12%}.orbit-label.four{top:18%;left:-3%}
+.hero-bottom{
+  margin-top:45px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);
+  display:flex;gap:28px;flex-wrap:wrap;color:#a9c5ce;font-size:13px;font-weight:700;
+}
+.hero-bottom strong{color:white;margin-right:5px;}
+@media(max-width:900px){
+ .hero-grid{grid-template-columns:1fr;gap:25px}
+ .hero-visual{min-height:390px;order:-1}
+ .hero-orbit{width:min(390px,82vw)}
+ .hero-orbit .hero-logo{width:min(255px,60vw)}
+ .hero-bottom{margin-top:28px}
+}
+@media(max-width:600px){
+ .hero{padding-top:110px}
+ .hero h1{font-size:50px}
+ .hero p{font-size:16px}
+ .hero-visual{min-height:330px}
+ .orbit-label{font-size:9px;padding:7px 9px}
+ .orbit-label.one{right:0}.orbit-label.four{left:0}
+}
+
 </style>
 </head>
 
@@ -641,41 +724,49 @@ footer p{
 
 <section class="hero">
 
-  <div class="container">
+  <div class="container hero-grid">
 
     <div class="hero-content">
 
-      <img class="hero-logo" src="assets/safari-minds-village-logo.webp" alt="SAFARI MINDS VILLAGE – TUNISIA official logo">
+      <div class="hero-kicker">TUNISIA • EDUCATION • ADVENTURE • INNOVATION</div>
 
-      <div class="eyebrow">
-        TUNISIA • SMART EDUCATIONAL TOURISM
-      </div>
+      <h1>LEARN.<span>EXPLORE.</span>CHALLENGE.</h1>
 
-      <h1>
-        SAFARI
-        <span>MINDS</span>
-      </h1>
-
-      <h2>
-        VILLAGE – TUNISIA
-      </h2>
+      <h2>Welcome to SAFARI MINDS VILLAGE – TUNISIA.</h2>
 
       <p>
-        A new generation educational adventure destination where
-        children and teenagers learn, explore, challenge themselves
-        and develop the skills of tomorrow.
+        A new-generation educational adventure destination for children and teenagers aged 6–15,
+        where intelligence meets nature, technology, sport, culture and challenge.
       </p>
 
-      <div class="hero-actions">
-        <a href="#worlds" class="btn btn-primary">
-          Explore the Village
-        </a>
-
-        <a href="#experience" class="btn btn-outline">
-          Discover the Experience
-        </a>
+      <div class="hero-badges">
+        <span class="hero-badge">Ages 6–15</span>
+        <span class="hero-badge">Smart Learning</span>
+        <span class="hero-badge">Nature & Sea</span>
+        <span class="hero-badge">Future Skills</span>
       </div>
 
+      <div class="hero-actions">
+        <a href="#worlds" class="btn btn-primary">Explore the Village</a>
+        <a href="#experience" class="btn btn-outline">Discover the Experience</a>
+      </div>
+
+      <div class="hero-bottom">
+        <span><strong>7</strong> immersive worlds</span>
+        <span><strong>7</strong> days of discovery</span>
+        <span><strong>1</strong> Tunisian vision, open to the world</span>
+      </div>
+
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-orbit">
+        <img class="hero-logo" src="assets/safari-minds-village-logo.webp" alt="">
+        <span class="orbit-label one">SMART MIND</span>
+        <span class="orbit-label two">BLUE SEA</span>
+        <span class="orbit-label three">FUTURE LAB</span>
+        <span class="orbit-label four">SMART FOREST</span>
+      </div>
     </div>
 
   </div>
@@ -1062,8 +1153,8 @@ footer p{
       where education becomes an unforgettable adventure.
     </p>
 
-    <a href="mailto:info@safarimindsvillage.com" class="btn btn-primary">
-      Contact SAFARI MINDS
+    <a href="#worlds" class="btn btn-primary">
+      Discover the Village
     </a>
 
   </div>
