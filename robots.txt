@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://clubplan3r-ai.github.io/safari-minds-village/sitemap.xml
