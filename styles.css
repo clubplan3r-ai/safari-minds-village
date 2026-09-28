@@ -6,3 +6,5 @@
 
 /* World navigation polish */
 .cards a.card{display:block;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}.cards a.card:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(8,48,76,.12);border-color:rgba(47,169,201,.45)}.cards a.card strong{display:inline-block;margin-top:13px;color:var(--green);font-size:13px}
+
+@media(max-width:1050px){.navlinks{display:flex;flex-wrap:wrap;gap:8px}.menu,.menu-toggle{display:none!important}}
