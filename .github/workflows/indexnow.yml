@@ -9,19 +9,14 @@ jobs:
   submit:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - name: Submit sitemap URLs to IndexNow
+        env:
+          INDEXNOW_KEY: 9f4c2a7e6b1d8c503a9e7f2b6d4c1a85
         run: |
-          curl -sS -X POST 'https://api.indexnow.org/indexnow' \
-            -H 'Content-Type: application/json; charset=utf-8' \
-            --data '{
-              "host":"clubplan3r-ai.github.io",
-              "key":"9f4c2a7e6b1d8c503a9e7f2b6d4c1a85",
-              "keyLocation":"https://clubplan3r-ai.github.io/safari-minds-village/9f4c2a7e6b1d8c503a9e7f2b6d4c1a85.txt",
-              "urlList":[
-                "https://clubplan3r-ai.github.io/safari-minds-village/",
-                "https://clubplan3r-ai.github.io/safari-minds-village/activities/",
-                "https://clubplan3r-ai.github.io/safari-minds-village/program/",
-                "https://clubplan3r-ai.github.io/safari-minds-village/partners/",
-                "https://clubplan3r-ai.github.io/safari-minds-village/contact/"
-              ]
-            }'
+          grep -oP '(?<=<loc>).*?(?=</loc>)' sitemap.xml | while read -r url; do
+            curl -sS -X POST 'https://api.indexnow.org/indexnow' \
+              -H 'Content-Type: application/json; charset=utf-8' \
+              --data "{"host":"clubplan3r-ai.github.io","key":"$INDEXNOW_KEY","keyLocation":"https://clubplan3r-ai.github.io/safari-minds-village/$INDEXNOW_KEY.txt","urlList":["$url"]}"
+            echo
+          done
