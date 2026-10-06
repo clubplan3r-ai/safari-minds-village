@@ -14,7 +14,7 @@ jobs:
         env:
           INDEXNOW_KEY: 9f4c2a7e6b1d8c503a9e7f2b6d4c1a85
         run: |
-          grep -oP '(?<=<loc>).*?(?=</loc>)' sitemap.xml | while read -r url; do
+          printf '%s\n' 'https://clubplan3r-ai.github.io/safari-minds-village/insights/educational-adventure-tunisia/' | while read -r url; do
             curl -sS -X POST 'https://api.indexnow.org/indexnow' \
               -H 'Content-Type: application/json; charset=utf-8' \
               --data "{"host":"clubplan3r-ai.github.io","key":"$INDEXNOW_KEY","keyLocation":"https://clubplan3r-ai.github.io/safari-minds-village/$INDEXNOW_KEY.txt","urlList":["$url"]}"
