@@ -13,14 +13,28 @@ jobs:
       - name: Submit sitemap URLs to IndexNow
         env:
           INDEXNOW_KEY: 9f4c2a7e6b1d8c503a9e7f2b6d4c1a85
+        shell: bash
         run: |
-          grep -oP '(?<=<loc>).*?(?=</loc>)' sitemap.xml | while read -r url; do
-            curl -sS -X POST 'https://api.indexnow.org/indexnow' \
-              -H 'Content-Type: application/json; charset=utf-8' \
-              --data "{\"host\":\"clubplan3r-ai.github.io\",\"key\":\"$INDEXNOW_KEY\",\"keyLocation\":\"https://clubplan3r-ai.github.io/safari-minds-village/$INDEXNOW_KEY.txt\",\"urlList\":[\"$url\"]}"
-            echo
-          done
-          url='https://clubplan3r-ai.github.io/safari-minds-village/insights/educational-adventure-tunisia/'
-          curl -sS -X POST 'https://api.indexnow.org/indexnow' \
-            -H 'Content-Type: application/json; charset=utf-8' \
-            --data "{\"host\":\"clubplan3r-ai.github.io\",\"key\":\"$INDEXNOW_KEY\",\"keyLocation\":\"https://clubplan3r-ai.github.io/safari-minds-village/$INDEXNOW_KEY.txt\",\"urlList\":[\"$url\"]}"
+          python3 - <<'PY' > payload.json
+          import json
+          import xml.etree.ElementTree as ET
+          import os
+          root = ET.parse("sitemap.xml").getroot()
+          urls = [node.text.strip() for node in root.findall(".//{*}loc") if node.text]
+          key = os.environ["INDEXNOW_KEY"]
+          payload = {
+              "host": "clubplan3r-ai.github.io",
+              "key": key,
+              "keyLocation": "https://clubplan3r-ai.github.io/safari-minds-village/" + key + ".txt",
+              "urlList": urls
+          }
+          print(json.dumps(payload, ensure_ascii=False))
+          print(f"Prepared {len(urls)} sitemap URLs", file=__import__("sys").stderr)
+          PY
+          status=$(curl -sS -o indexnow-response.txt -w "%{http_code}" -X POST "https://api.indexnow.org/indexnow" -H "Content-Type: application/json; charset=utf-8" --data-binary @payload.json)
+          cat indexnow-response.txt
+          echo "IndexNow HTTP status: $status"
+          case "$status" in
+            200|202) ;;
+            *) exit 1 ;;
+          esac
